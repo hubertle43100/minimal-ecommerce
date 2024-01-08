@@ -5,10 +5,11 @@ import { ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useShoppingCart } from "use-shopping-cart";
+import "../globals.css";
 
 const links = [
   { name: "Home", href: "/" },
-  { name: "Best Sellers", href: "/Best_Sellers" },
+
   { name: "Milk Tea", href: "/Milk_Tea" },
   { name: "Fruit Tea", href: "/Fruit_Tea" },
 ];
@@ -19,11 +20,13 @@ export default function Navbar() {
 
   return (
     <div className="mb-8 border-b">
-      <div className="flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl">
+      <div className="flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl p-1">
         <Link href="/">
-          <h1 className="text-2xl md:text-4xl font-bold">
-            Boba<span className="text-primary">shop</span>
-          </h1>
+          <div className="bg-green-500 flex items-end">
+            <h1 className="text-sm md:text-1xl font-bold m-2 mt-10 mr-12 text-white font-SourceCodePro">
+              Boba
+            </h1>
+          </div>
         </Link>
 
         <nav className="hidden gap-12 lg:flex 2xl:ml-16">
@@ -32,7 +35,7 @@ export default function Navbar() {
             <div key={idx}>
               {pathname === link.href ? (
                 <Link
-                  className="text-lg font-semibold text-primary"
+                  className="text-lg font-semibold text-primary font-SourceCodePro"
                   href={link.href}
                 >
                   {link.name}
@@ -40,7 +43,7 @@ export default function Navbar() {
               ) : (
                 <Link
                   href={link.href}
-                  className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-primary"
+                  className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-primary font-SourceCodePro"
                 >
                   {link.name}
                 </Link>
@@ -48,7 +51,7 @@ export default function Navbar() {
             </div>
           ))}
         </nav>
-        <div className="flex divide-x border-r sm:border-l">
+        <div className="flex hover:bg-slate-600">
           <Button
             variant={"outline"}
             onClick={() => handleCartClick()}
@@ -56,7 +59,7 @@ export default function Navbar() {
           >
             <ShoppingBag />
             <span className="hidden text-xs font-semibold text-gray-500 sm:block">
-              Cart
+              Cart {/* ADD NUMBER */}
             </span>
           </Button>
         </div>

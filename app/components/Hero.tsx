@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { client, urlFor } from "../lib/sanity";
 import Link from "next/link";
+import "../globals.css";
 
 async function getData() {
   const query = "*[_type == 'heroImage'][0]";
@@ -13,55 +14,71 @@ export const revalidate = 10;
 
 export default async function Hero() {
   const data = await getData();
+
   return (
     <section className="mx-auto max-w-2xl px-4 sm:pb-6 lg:max-w-7xl lg:px-8">
       <div className="mb-8 flex flex-wrap justify-between md:mb-16">
-        <div className="mb-6 flex w-full flex-col justify-center sm:mb-12 lg:mb-0 lg:w-1/3 lg:pb-24 lg:pt-48">
-          <h1 className="mb-4 text-4xl font-bold text-black sm:text-5xl md:mb-8 md:text-6xl">
-            Top Fashion for a top price!
+        <div className=" flex w-full flex-col justify-center lg:mb-0 lg:w-1/2 ">
+          <h1 className="mb-4 text-2xl text-black sm:text-3xl md:mb-8 md:text-4xl font-SourceCodePro font-bold">
+            Explore uniquely sophisticated tea journey
           </h1>
-          <p className="max-w-md leading-relaxed text-gray-500 xl:text-lg">
-            We sell only the most exclusive and high quality products for you.
-            We are the best so come and shop with us.
+          <p className="max-w-md leading-relaxed text-gray-500 xl:text-lg font-SourceCodePro mb-8">
+            Individually brewed for perfection, ensuring freshness in every cup
           </p>
-        </div>
+          <div className="flex mb-10">
+            <Link href="/Milk_Tea">
+              <button className="bg-green-500 flex items-end mr-1">
+                <h1 className="text-sm md:text-1xl font-bold m-2 mt-10 mr-4 text-white font-SourceCodePro">
+                  Milk tea
+                </h1>
+              </button>
+            </Link>
 
-        <div className="mb-12 flex w-full md:mb-16 lg:w-2/3">
-          <div className="relative left-12 top-12 z-10 -ml-12 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:left-16 md:top-16 lg:ml-0">
-            {/* <Image
+            <Link href="/Fruit_Tea">
+              <button className="bg-green-500 flex items-end mr-1">
+                <h1 className="text-sm md:text-1xl font-bold m-2 mt-10 mr-4 text-white font-SourceCodePro">
+                  Fruit Tea
+                </h1>
+              </button>
+            </Link>
+          </div>
+          <div className="flex mt-10 flex-grow">
+            <Image
               src={urlFor(data.image1).url()}
               alt="Great Photo"
-              className="h-full w-full object-cover object-center"
+              className="object-cover object-center pr-2"
               priority
-              width={500}
-              height={500}
-            /> */}
+              width={265}
+              height={250}
+            />
+            <Image
+              src={urlFor(data.image2).url()}
+              alt="Great Photo"
+              className="object-cover object-center pr-1"
+              priority
+              width={265}
+              height={250}
+            />
           </div>
-
-          <div className="overflow-hidden rounded-lg bg-gray-100 shadow-lg"></div>
         </div>
-      </div>
-
-      <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
-        <div className="flex h-12 w-64 divide-x overflow-hidden rounded-lg border">
-          <Link
-            href="/Men"
-            className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
-          >
-            Men
-          </Link>
-          <Link
-            href="/Women"
-            className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
-          >
-            Women
-          </Link>
-          <Link
-            href="/Teens"
-            className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
-          >
-            Teens
-          </Link>
+        <div className="relative">
+          <Image
+            src={urlFor(data.image3).url()}
+            alt="Great Photo"
+            className="object-cover object-center pt-4 pr-1"
+            priority
+            width={600}
+            height={600}
+          />
+          <div className="absolute bottom-5 left-10 right-10 bg-gray-800 text-white p-4 ">
+            <p className="text-2xl font-SourceCodePro pb-3 md:text-4xl">
+              Trending Drinks
+            </p>
+            <p className="text-sm font-Oswald font-semibold md:text-md">
+              Discovering the highest-quality ingredients is our goal, and our
+              journey takes us to the scenic island of Taiwan
+            </p>
+          </div>
         </div>
       </div>
     </section>

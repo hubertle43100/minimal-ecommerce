@@ -66,7 +66,7 @@ export default async function Newest() {
                   </p>
                 </div>
                 <p className="text-sm font-medium text-gray-900">
-                  ${product.price}
+                  ${product.price.toFixed(2)}
                 </p>
               </div>
             </div>
