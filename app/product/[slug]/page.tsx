@@ -7,6 +7,8 @@ import { fullProduct } from "@/app/interface";
 import { client } from "@/app/lib/sanity";
 import { Button } from "@/components/ui/button";
 import { Star, Truck } from "lucide-react";
+import Link from "next/link";
+import { FaArrowLeft } from "react-icons/fa";
 
 async function getData(slug: string) {
   const query = `*[_type == "product" && slug.current == "${slug}"][0] {
@@ -37,7 +39,16 @@ export default async function ProductPge({
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-screen-xl px-4 md:px-8">
-        <div className="grid gap-8 md:grid-cols-2">
+        <Link
+          className="text-sm font-SourceCodePro"
+          href={`/${data.categoryName}`}
+        >
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <FaArrowLeft className="mr-2" />
+            {data.categoryName.replace(/_/g, " ")}
+          </div>
+        </Link>
+        <div className="grid gap-8 pt-5 md:grid-cols-2">
           <ImageGallery images={data.images} />
 
           <div className="md:py-8">

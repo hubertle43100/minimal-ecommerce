@@ -9,6 +9,8 @@ import {
 
 import Image from "next/image";
 import { useShoppingCart } from "use-shopping-cart";
+import boba from "../public/boba.png";
+import { GoArrowUpRight } from "react-icons/go";
 
 export default function ShoppingCartModal() {
   const {
@@ -43,7 +45,24 @@ export default function ShoppingCartModal() {
           <div className="mt-8 flex-1 overflow-y-auto">
             <ul className="-my-6 divide-y divide-gray-200">
               {cartCount === 0 ? (
-                <h1 className="py-6">You dont have any items</h1>
+                <div className="flex flex-col items-center max-h-screen justify-center">
+                  <h1 className="pt-32 text-2xl font-semibold">
+                    There are no drinks here
+                  </h1>
+                  <h1>Order something for yourself, friends and family</h1>
+                  <div>
+                    <Image src={boba} alt="Boba" width={200} height={200} />
+                  </div>
+                  <button
+                    onClick={() => handleCartClick()} // Handle the action to go back or dismiss the screen
+                    className="py-6 text-primary focus:outline-none"
+                  >
+                    <div className="flex items-center">
+                      Go back
+                      <GoArrowUpRight className="ml-2 text-primary font-bold" />
+                    </div>
+                  </button>
+                </div>
               ) : (
                 <>
                   {Object.values(cartDetails ?? {}).map((entry) => (
