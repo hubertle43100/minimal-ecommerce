@@ -43,7 +43,7 @@ export default async function ProductPge({
           <div className="md:py-8">
             <div className="mb-2 md:mb-3">
               <span className="mb-0.5 inline-block text-gray-500">
-                {data.categoryName}
+                {data.categoryName.replace(/_/g, " ")}
               </span>
               <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl">
                 {data.name}

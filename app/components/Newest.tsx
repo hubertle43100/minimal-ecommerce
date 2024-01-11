@@ -62,7 +62,7 @@ export default async function Newest() {
                     </Link>
                   </h3>
                   <p className="mt-1 text-sm text-gray-500">
-                    {product.categoryName}
+                    {product.categoryName.replace(/_/g, " ")}
                   </p>
                 </div>
                 <p className="text-sm font-medium text-gray-900">
