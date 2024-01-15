@@ -56,7 +56,7 @@ export default async function CategoryPage({
                     <h3 className="text-sm text-gray-700">{product.name}</h3>
                   </div>
                   <p className="text-sm font-medium text-gray-900">
-                    ${product.price}
+                    ${product.price.toFixed(2)}
                   </p>
                 </div>
               </Link>

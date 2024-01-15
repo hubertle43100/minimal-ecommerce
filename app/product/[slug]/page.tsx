@@ -1,5 +1,3 @@
-// import AddToBag from "@/app/components/AddToBag";
-// import CheckoutNow from "@/app/components/CheckoutNow";
 import AddToBag from "@/app/components/AddToBag";
 import CheckoutNow from "@/app/components/CheckoutNow";
 import ImageGallery from "@/app/components/ImageGallery";
@@ -9,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Star, Truck } from "lucide-react";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
+import DrinkOptions from "./drinkOptions";
 
 async function getData(slug: string) {
   const query = `*[_type == "product" && slug.current == "${slug}"][0] {
@@ -29,12 +28,16 @@ async function getData(slug: string) {
 
 export const dynamic = "force-dynamic";
 
+interface ExtendedFullProduct extends fullProduct {
+  quantity: number;
+}
+
 export default async function ProductPge({
   params,
 }: {
   params: { slug: string };
 }) {
-  const data: fullProduct = await getData(params.slug);
+  const data: ExtendedFullProduct = await getData(params.slug);
 
   return (
     <div className="bg-white">
@@ -72,34 +75,7 @@ export default async function ProductPge({
               </span>
             </div>
 
-            <div className="mb-4">
-              <div className="flex items-end gap-2">
-                <span className="text-xl font-bold text-gray-800 md:text-2xl">
-                  ${data.price.toFixed(2)}
-                </span>
-              </div>
-            </div>
-
-            <div className="flex gap-2.5">
-              <AddToBag
-                currency="USD"
-                description={data.description}
-                image={data.images[0]}
-                name={data.name}
-                price={data.price}
-                key={data._id}
-                price_id={data.price_id}
-              />
-              <CheckoutNow
-                currency="USD"
-                description={data.description}
-                image={data.images[0]}
-                name={data.name}
-                price={data.price}
-                key={data._id}
-                price_id={data.price_id}
-              />
-            </div>
+            <DrinkOptions data={data} />
 
             <p className="mt-12 text-base text-gray-500 tracking-wide">
               {data.description}

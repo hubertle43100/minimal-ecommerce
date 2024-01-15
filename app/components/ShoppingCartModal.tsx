@@ -34,6 +34,7 @@ export default function ShoppingCartModal() {
       console.log(error);
     }
   }
+
   return (
     <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}>
       <SheetContent className="sm:max-w-lg w-[90vw]">
@@ -86,14 +87,10 @@ export default function ShoppingCartModal() {
                               ${(entry.price * entry.quantity).toFixed(2)}
                             </p>
                           </div>
-                          <p className="mt-1 text-sm text-gray-500 line-clamp-2">
-                            {entry.description}
-                          </p>
+                          <p className="text-gray-500 text-sm"> 20oz</p>
                         </div>
 
                         <div className="flex flex-1 items-end justify-between text-sm">
-                          <p className="text-gray-500"> 20oz</p>
-
                           <div className="flex">
                             <button
                               type="button"

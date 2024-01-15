@@ -11,6 +11,7 @@ export interface ProductCart {
   currency: string;
   image: any;
   price_id: string;
+  quantity: number;
 }
 
 export default function AddToBag({
@@ -20,6 +21,7 @@ export default function AddToBag({
   name,
   price,
   price_id,
+  quantity,
 }: ProductCart) {
   const { addItem, handleCartClick } = useShoppingCart();
 
@@ -30,11 +32,12 @@ export default function AddToBag({
     currency: currency,
     image: urlFor(image).url(),
     price_id: price_id,
+    quantity: quantity,
   };
   return (
     <Button
       onClick={() => {
-        addItem(product), handleCartClick();
+        addItem(product, { count: quantity }), handleCartClick();
       }}
     >
       Add To Cart

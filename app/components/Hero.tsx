@@ -70,7 +70,7 @@ export default async function Hero() {
             width={600}
             height={600}
           />
-          <div className="absolute bottom-5 left-10 right-10 bg-gray-800 text-white p-4 ">
+          <div className="absolute bottom-5 left-10 right-10 bg-black text-white p-4 ">
             <p className="text-2xl font-SourceCodePro pb-3 md:text-4xl">
               Trending Drinks
             </p>
