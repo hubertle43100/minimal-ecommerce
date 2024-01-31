@@ -65,7 +65,7 @@
 
 `Found something wrong with the website?`
 
-[![Check](https://img.shields.io/badge/Issues-FFDE59?style=for-the-badge&logo=Linode&logoColor=black)](https://github.com/hubertle43100/minimal-ecommerce/issues)
+[![Check](https://img.shields.io/badge/Issues-d3d3d3?style=for-the-badge&logo=Linode&logoColor=black)](https://github.com/hubertle43100/minimal-ecommerce/issues)
 
 <br/>
 
