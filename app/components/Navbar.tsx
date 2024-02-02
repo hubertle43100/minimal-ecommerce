@@ -6,12 +6,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useShoppingCart } from "use-shopping-cart";
 import "../globals.css";
+import { Oswald } from "next/font/google";
+
+const OswaldStyles = Oswald({ subsets: ["latin"] });
 
 const links = [
   { name: "Home", href: "/" },
 
   { name: "Milk Tea", href: "/Milk_Tea" },
   { name: "Fruit Tea", href: "/Fruit_Tea" },
+  { name: "About Us", href: "/about_us" },
 ];
 
 export default function Navbar() {
@@ -19,11 +23,11 @@ export default function Navbar() {
   const { handleCartClick } = useShoppingCart();
 
   return (
-    <div className="mb-8 border-b">
+    <div className={`${OswaldStyles.className} mb-8 border-b`}>
       <div className="flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl p-1">
         <Link href="/">
           <div className="bg-green-500 flex items-end">
-            <h1 className="text-sm md:text-1xl font-bold m-2 mt-10 mr-12 text-white font-SourceCodePro">
+            <h1 className="text-sm md:text-1xl font-bold m-2 mt-10 mr-12 text-white">
               Boba
             </h1>
           </div>
@@ -35,7 +39,7 @@ export default function Navbar() {
             <div key={idx}>
               {pathname === link.href ? (
                 <Link
-                  className="text-lg font-semibold text-primary font-SourceCodePro"
+                  className="text-lg font-semibold text-primary"
                   href={link.href}
                 >
                   {link.name}
@@ -43,7 +47,7 @@ export default function Navbar() {
               ) : (
                 <Link
                   href={link.href}
-                  className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-primary font-SourceCodePro"
+                  className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-primary "
                 >
                   {link.name}
                 </Link>

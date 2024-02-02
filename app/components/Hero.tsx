@@ -19,7 +19,7 @@ export default async function Hero() {
     <section className="mx-auto max-w-2xl px-4 sm:pb-6 lg:max-w-7xl lg:px-8">
       <div className="mb-8 flex flex-wrap justify-between md:mb-16">
         <div className=" flex w-full flex-col justify-center lg:mb-0 lg:w-1/2 ">
-          <h1 className="mb-4 text-2xl text-black sm:text-3xl md:mb-8 md:text-4xl font-SourceCodePro font-bold">
+          <h1 className="mb-4 text-2xl text-black sm:text-3xl md:mb-8 md:text-4xl font-bold">
             Explore uniquely sophisticated tea journey
           </h1>
           <p className="max-w-md leading-relaxed text-gray-500 xl:text-lg font-SourceCodePro mb-8">
@@ -28,7 +28,7 @@ export default async function Hero() {
           <div className="flex mb-10">
             <Link href="/Milk_Tea">
               <button className="bg-green-500 flex items-end mr-1">
-                <h1 className="text-sm md:text-1xl font-bold m-2 mt-10 mr-4 text-white font-SourceCodePro">
+                <h1 className="text-sm md:text-1xl font-bold m-2 mt-10 mr-4 text-white">
                   Milk tea
                 </h1>
               </button>
@@ -36,7 +36,7 @@ export default async function Hero() {
 
             <Link href="/Fruit_Tea">
               <button className="bg-green-500 flex items-end mr-1">
-                <h1 className="text-sm md:text-1xl font-bold m-2 mt-10 mr-4 text-white font-SourceCodePro">
+                <h1 className="text-sm md:text-1xl font-bold m-2 mt-10 mr-4 text-white ">
                   Fruit Tea
                 </h1>
               </button>
@@ -71,10 +71,8 @@ export default async function Hero() {
             height={600}
           />
           <div className="absolute bottom-5 left-10 right-10 bg-black text-white p-4 ">
-            <p className="text-2xl font-SourceCodePro pb-3 md:text-4xl">
-              Trending Drinks
-            </p>
-            <p className="text-sm font-Oswald font-semibold md:text-md">
+            <p className="text-2xlo pb-3 md:text-4xl">Trending Drinks</p>
+            <p className="text-sm font-SourceCodePro font-semibold md:text-md">
               Discovering the highest-quality ingredients is our goal, and our
               journey takes us to the scenic island of Taiwan
             </p>
