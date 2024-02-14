@@ -54,8 +54,21 @@
 `Screenshots`
 
 <p align="center">
-    <img src="https://github.com/hubertle43100/minimal-ecommerce/assets/56861838/b0303ab9-4227-4155-b8fc-36d6c00d85b5" alt="Hobbies">
-  </p>
+  <img src="https://github.com/hubertle43100/minimal-ecommerce/assets/56861838/b8d93be7-3b47-4238-b61a-5c100a67cb76" alt="Hobbies">
+  <br/>
+  <br/>
+  <img src="https://github.com/hubertle43100/minimal-ecommerce/assets/56861838/5bd7c5a9-9159-420a-bc3e-53b4a94c7fbd" alt="Hobbies">
+  <br/>
+  <br/>
+  <img src="https://github.com/hubertle43100/minimal-ecommerce/assets/56861838/2c04c0ef-b24d-40b2-8bf6-39b87689c03b" alt="Hobbies">
+  <br/>
+  <br/>
+  <img src="https://github.com/hubertle43100/minimal-ecommerce/assets/56861838/19ec07aa-93ba-43c8-a195-1de54bc8ffaa" alt="Hobbies">
+</p>
+
+
+
+
 
 > This is for the full screen you will have two columns (one scrollable) while in half-screen it is going to be cohesively one.
 
