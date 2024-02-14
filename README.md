@@ -60,11 +60,9 @@
   <img src="https://github.com/hubertle43100/minimal-ecommerce/assets/56861838/5bd7c5a9-9159-420a-bc3e-53b4a94c7fbd" alt="Hobbies">
   <br/>
   <br/>
-  <img src="https://github.com/hubertle43100/minimal-ecommerce/assets/56861838/2c04c0ef-b24d-40b2-8bf6-39b87689c03b" alt="Hobbies">
-  <br/>
-  <br/>
-  <img src="https://github.com/hubertle43100/minimal-ecommerce/assets/56861838/19ec07aa-93ba-43c8-a195-1de54bc8ffaa" alt="Hobbies">
+  <img src="https://github.com/hubertle43100/minimal-ecommerce/assets/56861838/236393db-2d43-4d1a-a1eb-41b9058fa0b3" alt="Hobbies">
 </p>
+
 
 
 
