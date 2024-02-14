@@ -7,7 +7,7 @@
   </p>
 </a>
 <p align="center">
-  <strong>🍵 Created a tea shop that links to Stripe for checkout <br> browse the most popular flavors in both milk tea and fruit tea </strong>
+  <strong>🍵 Created a tea shop that links to Stripe for checkout <br> Browse the most popular flavors in both milk tea and fruit tea </strong>
 </p>
 
 <br/>
@@ -54,10 +54,10 @@
 `Screenshots`
 
 <p align="center">
-    <img src="https://github.com/hubertle43100/minimal-portfolio/assets/56861838/d14b2eeb-4d8c-45ee-82ae-1d6d0433b33d" alt="Hobbies">
+    <img src="https://github.com/hubertle43100/minimal-ecommerce/assets/56861838/b0303ab9-4227-4155-b8fc-36d6c00d85b5" alt="Hobbies">
   </p>
 
-> This for full screen you will two columns (one scrollable) while in half-screen it is going to be cohesively one.
+> This is for the full screen you will have two columns (one scrollable) while in half-screen it is going to be cohesively one.
 
 <br/>
 <br/>
