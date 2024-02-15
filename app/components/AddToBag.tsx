@@ -39,6 +39,7 @@ export default function AddToBag({
       onClick={() => {
         addItem(product, { count: quantity }), handleCartClick();
       }}
+      className="rounded-none w-2/5"
     >
       Add To Cart
     </Button>

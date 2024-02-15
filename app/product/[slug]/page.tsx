@@ -56,22 +56,11 @@ export default async function ProductPge({
 
           <div className="md:py-8">
             <div className="mb-2 md:mb-3">
-              <span className="mb-0.5 inline-block text-gray-500">
-                {data.categoryName.replace(/_/g, " ")}
-              </span>
               <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl">
                 {data.name}
               </h2>
-            </div>
-
-            <div className="mb-6 flex items-center gap-3 md:mb-10">
-              <Button className="rounded-full gap-x-2">
-                <span className="text-sm">4.2</span>
-                <Star className="h-5 w-5" />
-              </Button>
-
-              <span className="text-sm text-gray-500 transition duration-100">
-                56 Ratings
+              <span className="mb-0.5 inline-block text-gray-500">
+                {data.categoryName.replace(/_/g, " ")}
               </span>
             </div>
 
