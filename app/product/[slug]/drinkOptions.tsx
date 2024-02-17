@@ -80,9 +80,9 @@ const DrinkOptions: React.FC<DrinkOptionsProps> = ({ data }) => {
         </div>
       </div>
 
-      {options.map(({ label, options }) => (
-        <div className="border-b border-gray-400 mb-2">
-          <div key={label} className="flex justify-between w-full mt-1">
+      {options.map(({ label, options }, index) => (
+        <div className="border-b border-gray-400 mb-2" key={label}>
+          <div className="flex justify-between w-full mt-1">
             <p>{label}</p>
             <select
               value={selectedOptions[label] || ""}
@@ -94,9 +94,9 @@ const DrinkOptions: React.FC<DrinkOptionsProps> = ({ data }) => {
               }
               className="w-1/3 px-2 py-1 rounded-lg text-right border-none shadow-non"
             >
-              {options.map((option, index) => (
+              {options.map((option, optionIndex) => (
                 <option
-                  key={index}
+                  key={optionIndex} // Use a unique key for each option
                   value={typeof option === "string" ? option : option.value}
                 >
                   {typeof option === "string" ? option : option.icon}
