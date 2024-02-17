@@ -30,18 +30,25 @@ const DrinkOptions: React.FC<DrinkOptionsProps> = ({ data }) => {
   const [quantity, setQuantity] = useState(1);
   const [selectedOptions, setSelectedOptions] = useState<
     Record<string, string>
-  >({});
+  >({
+    "Temperature preference:": "Cold",
+    "Sugar Level:": "70%",
+    "Ice Level:": "Regular",
+    "1 Free Toppings:": "Honey Boba",
+  });
+
+  const selectedOptionsArray = Object.values(selectedOptions);
 
   const options: Option[] = [
     {
       label: "Temperature preference:",
       options: ["Cold", "Hot"],
     },
-    { label: "Sugar Level:", options: ["25%", "50%", "75%", "100%"] },
+    { label: "Sugar Level:", options: ["25%", "50%", "70%", "100%"] },
     { label: "Ice Level:", options: ["None", "Less", "Regular", "More"] },
     {
       label: "1 Free Toppings:",
-      options: ["None", "Pearls", "Pudding", "Jelly"],
+      options: ["None", "Honey Boba", "Pudding", "Grass Jelly", "Aloe Vera"],
     },
   ];
 
@@ -74,31 +81,34 @@ const DrinkOptions: React.FC<DrinkOptionsProps> = ({ data }) => {
       </div>
 
       {options.map(({ label, options }) => (
-        <div key={label} className="flex justify-between w-full mt-1">
-          <p>{label}</p>
-          <select
-            value={selectedOptions[label] || ""}
-            onChange={(e) =>
-              setSelectedOptions({
-                ...selectedOptions,
-                [label]: e.target.value,
-              })
-            }
-            className="w-1/6 px-2 py-1 rounded-lg text-right "
-          >
-            {options.map((option, index) => (
-              <option
-                key={index}
-                value={typeof option === "string" ? option : option.value}
-              >
-                {typeof option === "string" ? option : option.icon}
-              </option>
-            ))}
-          </select>
+        <div className="border-b border-gray-400 mb-2">
+          <div key={label} className="flex justify-between w-full mt-1">
+            <p>{label}</p>
+            <select
+              value={selectedOptions[label] || ""}
+              onChange={(e) =>
+                setSelectedOptions({
+                  ...selectedOptions,
+                  [label]: e.target.value,
+                })
+              }
+              className="w-1/3 px-2 py-1 rounded-lg text-right border-none shadow-non"
+            >
+              {options.map((option, index) => (
+                <option
+                  key={index}
+                  value={typeof option === "string" ? option : option.value}
+                >
+                  {typeof option === "string" ? option : option.icon}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
       ))}
-      <div className="flex justify-between w-full mt-1 mb-10">
-        <p>Free Sticker</p>
+
+      <div className="flex justify-between w-full mt-1 mb-2">
+        <p>1 Free Sticker:</p>
         <div className="flex text-4xl">
           <FcStackOfPhotos className={iconCircles} />
           <FcGlobe className={iconCircles} />
@@ -106,6 +116,7 @@ const DrinkOptions: React.FC<DrinkOptionsProps> = ({ data }) => {
           <FcChargeBattery className={iconCircles} />
         </div>
       </div>
+      <div className="border-b border-gray-400 mb-10"></div>
 
       <div className="flex gap-2.5 pt-3">
         <div className="flex justify-between w-full">
@@ -124,6 +135,7 @@ const DrinkOptions: React.FC<DrinkOptionsProps> = ({ data }) => {
             key={data._id}
             price_id={data.price_id}
             quantity={quantity}
+            addon={[...selectedOptionsArray, "1 Free Sticker"]} //APPEND HERE
           />
         </div>
       </div>

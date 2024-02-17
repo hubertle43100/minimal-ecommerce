@@ -87,7 +87,11 @@ export default function ShoppingCartModal() {
                               ${(entry.price * entry.quantity).toFixed(2)}
                             </p>
                           </div>
-                          <p className="text-gray-500 text-sm"> 20oz</p>
+                          {entry.addon.map((item: string, index: number) => (
+                            <p key={index} className="text-gray-500 text-sm">
+                              {item}
+                            </p>
+                          ))}
                         </div>
 
                         <div className="flex flex-1 items-end justify-between text-sm">
