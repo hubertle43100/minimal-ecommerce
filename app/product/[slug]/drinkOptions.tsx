@@ -107,7 +107,7 @@ const DrinkOptions: React.FC<DrinkOptionsProps> = ({ data }) => {
       {options.map(({ label, options }, index) => (
         <div className="border-b border-gray-400 mb-2" key={label}>
           <div className="flex justify-between w-full mt-1">
-            <p>{label}</p>
+            <p className="font-bold text-md">{label}</p>
             <select
               value={selectedOptions[label] || ""}
               onChange={(e) =>
@@ -116,7 +116,7 @@ const DrinkOptions: React.FC<DrinkOptionsProps> = ({ data }) => {
                   [label]: e.target.value,
                 })
               }
-              className="px-2 py-1 rounded-lg text-right border-none shadow-non outline-none"
+              className="px-2 py-1 rounded-lg text-right font-SourceCodePro text-sm border-none shadow-non outline-none"
             >
               {options.map((option, optionIndex) => (
                 <option
@@ -132,7 +132,7 @@ const DrinkOptions: React.FC<DrinkOptionsProps> = ({ data }) => {
       ))}
 
       <div className="flex justify-between w-full mt-1 mb-2">
-        <p>1 Free Sticker:</p>
+        <p className="font-bold text-md ">1 Free Sticker:</p>
         <div className="flex text-4xl">
           <FcStackOfPhotos
             className={`${iconCircles} ${

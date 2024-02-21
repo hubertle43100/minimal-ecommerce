@@ -16,7 +16,7 @@ export default async function Hero() {
   const data = await getData();
 
   return (
-    <section className="mx-auto max-w-2xl px-4 sm:pb-6 lg:max-w-7xl lg:px-8">
+    <section className="mx-auto px-4 sm:pb-6 lg:max-w-7xl">
       <div className="mb-8 flex flex-wrap justify-between md:mb-16">
         <div className=" flex w-full flex-col justify-center lg:mb-0 lg:w-1/2 ">
           <h1 className="mb-4 text-2xl text-black sm:text-3xl md:mb-8 md:text-4xl font-SourceCodePro font-bold">

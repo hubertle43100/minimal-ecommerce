@@ -51,15 +51,15 @@ export default async function ProductPge({
             {data.categoryName.replace(/_/g, " ")}
           </div>
         </Link>
-        <div className="grid gap-8 pt-5 md:grid-cols-2">
+        <div className="grid gap-8 pt-5 md:grid-cols-2 mb-4">
           <ImageGallery images={data.images} />
 
-          <div className="md:py-8">
+          <div className="">
             <div className="mb-2 md:mb-3">
-              <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl">
+              <h2 className="text-2xl font-bold text-gray-800 lg:text-4xl">
                 {data.name}
               </h2>
-              <span className="mb-0.5 inline-block text-gray-500">
+              <span className="mb-0.5 inline-block text-gray-500 text-2xl lg:text-3xl">
                 {data.categoryName.replace(/_/g, " ")}
               </span>
             </div>
