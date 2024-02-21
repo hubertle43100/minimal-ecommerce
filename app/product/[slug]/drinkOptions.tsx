@@ -1,3 +1,4 @@
+//case sensitive
 "use client";
 
 import AddToBag from "@/app/components/AddToBag";
@@ -56,11 +57,17 @@ const DrinkOptions: React.FC<DrinkOptionsProps> = ({ data }) => {
     },
     {
       label: "Ice Level:",
-      options: ["None", "Less Ice", "Regular Ice", "More Ice"],
+      options: ["No Ice", "Less Ice", "Regular Ice", "More Ice"],
     },
     {
       label: "1 Free Toppings:",
-      options: ["None", "Honey Boba", "Pudding", "Grass Jelly", "Aloe Vera"],
+      options: [
+        "No Toppings",
+        "Honey Boba",
+        "Pudding",
+        "Grass Jelly",
+        "Aloe Vera",
+      ],
     },
   ];
 
