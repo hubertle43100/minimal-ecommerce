@@ -32,8 +32,8 @@ const DrinkOptions: React.FC<DrinkOptionsProps> = ({ data }) => {
     Record<string, string>
   >({
     "Temperature preference:": "Cold",
-    "Sugar Level:": "70%",
-    "Ice Level:": "Regular",
+    "Sugar Level:": "70% sweet",
+    "Ice Level:": "Regular Ice",
     "1 Free Toppings:": "Honey Boba",
   });
 
@@ -44,8 +44,20 @@ const DrinkOptions: React.FC<DrinkOptionsProps> = ({ data }) => {
       label: "Temperature preference:",
       options: ["Cold", "Hot"],
     },
-    { label: "Sugar Level:", options: ["25%", "50%", "70%", "100%"] },
-    { label: "Ice Level:", options: ["None", "Less", "Regular", "More"] },
+    {
+      label: "Sugar Level:",
+      options: [
+        "0% sweet",
+        "25% sweet",
+        "50% sweet",
+        "70% sweet",
+        "100% sweet",
+      ],
+    },
+    {
+      label: "Ice Level:",
+      options: ["None", "Less Ice", "Regular Ice", "More Ice"],
+    },
     {
       label: "1 Free Toppings:",
       options: ["None", "Honey Boba", "Pudding", "Grass Jelly", "Aloe Vera"],
@@ -63,12 +75,17 @@ const DrinkOptions: React.FC<DrinkOptionsProps> = ({ data }) => {
   };
 
   const calculateTotalPrice = () => {
-    // Example calculation, adjust as needed
-    return 0; // Placeholder calculation, you should implement the actual logic
+    return 0;
   };
 
   const iconCircles =
     "border hover:bg-slate-300 rounded-full p-1 border-gray-300 ml-1";
+
+  const [selectedIcon, setSelectedIcon] = useState("globe");
+
+  const handleClick = (iconName: string) => {
+    setSelectedIcon(iconName);
+  };
 
   return (
     <div className="mb-4">
@@ -92,11 +109,11 @@ const DrinkOptions: React.FC<DrinkOptionsProps> = ({ data }) => {
                   [label]: e.target.value,
                 })
               }
-              className="w-1/3 px-2 py-1 rounded-lg text-right border-none shadow-non"
+              className="px-2 py-1 rounded-lg text-right border-none shadow-non outline-none"
             >
               {options.map((option, optionIndex) => (
                 <option
-                  key={optionIndex} // Use a unique key for each option
+                  key={optionIndex}
                   value={typeof option === "string" ? option : option.value}
                 >
                   {typeof option === "string" ? option : option.icon}
@@ -110,10 +127,30 @@ const DrinkOptions: React.FC<DrinkOptionsProps> = ({ data }) => {
       <div className="flex justify-between w-full mt-1 mb-2">
         <p>1 Free Sticker:</p>
         <div className="flex text-4xl">
-          <FcStackOfPhotos className={iconCircles} />
-          <FcGlobe className={iconCircles} />
-          <FcMoneyTransfer className={iconCircles} />
-          <FcChargeBattery className={iconCircles} />
+          <FcStackOfPhotos
+            className={`${iconCircles} ${
+              selectedIcon === "stack" ? "bg-slate-300" : ""
+            }`}
+            onClick={() => handleClick("stack")}
+          />
+          <FcGlobe
+            className={`${iconCircles} ${
+              selectedIcon === "globe" ? "bg-slate-300" : ""
+            }`}
+            onClick={() => handleClick("globe")}
+          />
+          <FcMoneyTransfer
+            className={`${iconCircles} ${
+              selectedIcon === "transfer" ? "bg-slate-300" : ""
+            }`}
+            onClick={() => handleClick("transfer")}
+          />
+          <FcChargeBattery
+            className={`${iconCircles} ${
+              selectedIcon === "battery" ? "bg-slate-300" : ""
+            }`}
+            onClick={() => handleClick("battery")}
+          />
         </div>
       </div>
       <div className="border-b border-gray-400 mb-10"></div>
@@ -135,7 +172,7 @@ const DrinkOptions: React.FC<DrinkOptionsProps> = ({ data }) => {
             key={data._id}
             price_id={data.price_id}
             quantity={quantity}
-            addon={[...selectedOptionsArray, "1 Free Sticker"]} //APPEND HERE
+            addon={["24 oz", ...selectedOptionsArray, "1 Free Sticker"]}
           />
         </div>
       </div>

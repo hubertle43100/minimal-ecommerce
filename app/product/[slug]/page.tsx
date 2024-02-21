@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Star, Truck } from "lucide-react";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
-import DrinkOptions from "./drinkOptions";
+import DrinkOptions from "./DrinkOptions";
 
 async function getData(slug: string) {
   const query = `*[_type == "product" && slug.current == "${slug}"][0] {
