@@ -64,6 +64,7 @@ export default async function ProductPge({
               </span>
             </div>
 
+            {/* Deployment error */}
             <DrinkOptions data={data} />
 
             <p className="mt-12 text-base text-gray-500 tracking-wide">
