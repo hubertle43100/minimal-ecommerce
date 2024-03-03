@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 async function getData() {
-  const query = `*[_type == "product"]| order(_createdAt desc) {
+  const query = `*[_type == "product" && (name in ["Matcha Milk Tea", "Thai Milk Tea", "Oolong Milk Tea", "Assam Milk Tea"])]| order(_createdAt desc) {
         _id,
           price,
         name,
@@ -14,6 +14,11 @@ async function getData() {
           "imageUrl": images[0].asset->url
       }`;
 
+  const response = await fetch(
+    `https://your-sanity-project.api.sanity.io/v1/data/query/your-dataset-name?query=${encodeURIComponent(
+      query
+    )}`
+  );
   const data = await client.fetch(query);
 
   return data;
