@@ -1,4 +1,4 @@
-<a href="https://minimal-ecommerce-7srfekchj-hubertle43100s-projects.vercel.app/">
+<a href="https://minimal-ecommerce-hubertle43100s-projects.vercel.app/">
   <p align="center">
     <img src="https://github.com/hubertle43100/minimal-ecommerce/assets/56861838/70c9f08d-f5c6-44a7-8bd2-5fe949dac5ab" alt="Hobbies (8)" width="200" height="200">
   </p>
