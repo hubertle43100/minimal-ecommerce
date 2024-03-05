@@ -11,6 +11,7 @@ const links = [
   { name: "Home", href: "/" },
   { name: "Milk Tea", href: "/Milk_Tea" },
   { name: "Fruit Tea", href: "/Fruit_Tea" },
+  { name: "About", href: "/About" },
 ];
 
 export default function Navbar() {
